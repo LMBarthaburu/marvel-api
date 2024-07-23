@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, useParams } from 'react-router-dom';
+import Detalles from './Paginas/Detalles';
+import Home from './Paginas/Home';
+import Personajes from './Paginas/Personajes';
+import Eventos from './Paginas/Eventos';
+
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path='/*' element={<Home/>}/>
+        <Route path='/:tipo/:id' element={<RenderComponent />} />
+    </Routes>
   );
-}
+};
+
+const RenderComponent = () => {
+  const { tipo } = useParams();
+  switch (tipo) {
+    case 'comics':
+      return <Detalles />;
+    case 'characters':
+      return <Personajes />;
+    case 'events':
+      return <Eventos />;
+    default:
+      return <Home/>; // Puedes manejar aquí el caso de tipo desconocido
+  }
+};
 
 export default App;

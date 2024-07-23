@@ -1,0 +1,59 @@
+.hero{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 135vh;
+}
+.hero-fondo{
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://i.pinimg.com/originals/a6/5a/58/a65a58b3f82329c6e98e0141e2bc4050.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+}
+.hero-img{
+  z-index: 50;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  filter: drop-shadow( 2px 2px 4px #000 )
+}
+
+@media (min-width:573px) and (max-width:1024px){
+  .hero{
+    height: 110vh;
+    overflow: hidden;
+  }
+  .hero-img{
+    bottom: -25px;
+    width:1400px;
+    filter: drop-shadow( 2px 2px 4px #000 )
+  }
+}
+
+@media (max-width:573px){
+  .hero{
+    height: 110vh;
+    overflow: hidden;
+  }
+  .hero-fondo{
+    background-image: url('https://w0.peakpx.com/wallpaper/673/446/HD-wallpaper-marvel-logo-marvel-logo-marvel-studio.jpg');
+    background-position: center;
+    background-size: contain;
+  }
+  .hero-img{
+    width: 900px;
+    filter: drop-shadow( 2px 2px 4px #000 )
+  }
+}
+@media (max-width:375px){
+  .hero{
+    height: 120vh;
+  }
+
+}
