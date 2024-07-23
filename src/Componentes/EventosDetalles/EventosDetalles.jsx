@@ -43,7 +43,7 @@ function EventosDetalles() {
       })
   }
   const getComics = () => {
-    axios.get(`http://gateway.marvel.com/v1/public/events/${id}/comics?&ts=1&apikey=f86c189361b957045fc522a14ad03e35&hash=100259c8708cdbc9495814193c19152a&limit=10&offset=0`)
+    axios.get(`https://gateway.marvel.com/v1/public/events/${id}/comics?&ts=1&apikey=f86c189361b957045fc522a14ad03e35&hash=100259c8708cdbc9495814193c19152a&limit=10&offset=0`)
     .then(res => {
       if (res.status === 200) {
         setComics(res.data.data.results)
