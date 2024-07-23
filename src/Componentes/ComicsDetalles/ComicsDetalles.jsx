@@ -32,7 +32,7 @@ function ComicsDetalles() {
       })
   }
   const getcharacters = () => {
-    axios.get(`http://gateway.marvel.com/v1/public/comics/${id}/characters?&ts=1&apikey=f86c189361b957045fc522a14ad03e35&hash=100259c8708cdbc9495814193c19152a`)
+    axios.get(`https://gateway.marvel.com/v1/public/comics/${id}/characters?&ts=1&apikey=f86c189361b957045fc522a14ad03e35&hash=100259c8708cdbc9495814193c19152a`)
     .then(res => {
       if (res.status === 200) {
         setCharacters(res.data.data.results)
@@ -43,7 +43,7 @@ function ComicsDetalles() {
       })
   }
   const getevent = () => {
-    axios.get(`http://gateway.marvel.com/v1/public/comics/${id}/events?&ts=1&apikey=f86c189361b957045fc522a14ad03e35&hash=100259c8708cdbc9495814193c19152a`)
+    axios.get(`https://gateway.marvel.com/v1/public/comics/${id}/events?&ts=1&apikey=f86c189361b957045fc522a14ad03e35&hash=100259c8708cdbc9495814193c19152a`)
     .then(res => {
       if (res.status === 200) {
         setEvents(res.data.data.results)
