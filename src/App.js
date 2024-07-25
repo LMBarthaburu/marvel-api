@@ -3,6 +3,7 @@ import Detalles from './Paginas/Detalles';
 import Home from './Paginas/Home';
 import Personajes from './Paginas/Personajes';
 import Eventos from './Paginas/Eventos';
+import Error from './Paginas/Error';
 
 
 function App() {
@@ -10,8 +11,9 @@ function App() {
   
   return (
       <Routes>
-        <Route path='/*' element={<Home/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/:tipo/:id' element={<RenderComponent />} />
+        <Route path='/*' element={<Error/>}/>
     </Routes>
   );
 };

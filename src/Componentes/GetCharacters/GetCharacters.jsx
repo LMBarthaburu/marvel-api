@@ -62,10 +62,10 @@ function GetCharacters() {
       </div>
       {
         characters.length>0?
-          <div className='d-flex justify-content-center align-items-center mt-3'>
-            <button  onClick={prevPage}disabled={page === 0} className='buscador-paginacion-boton'>Previous Characters </button>
+          <div className='buscador-paginacion mt-3 text-center'>
+            <button  onClick={prevPage}disabled={page === 0} className='buscador-paginacion-boton'>Previous </button>
             <p className='m-0 mx-3'>{page + 1} de {totalPages}</p>
-            <button onClick={nextPage} disabled={page === totalPages - 1} className='buscador-paginacion-boton'>Next Characters</button>
+            <button onClick={nextPage} disabled={page === totalPages - 1} className='buscador-paginacion-boton'>Next</button>
           </div>
           :
           null

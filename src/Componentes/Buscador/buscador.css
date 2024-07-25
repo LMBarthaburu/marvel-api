@@ -141,14 +141,14 @@
 .buscador-paginacion-boton{
   border: none;
   outline: none;
-  background-color: rgb(212, 0, 0);
+  background-color: transparent;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   text-decoration: underline;
+  width: 150px;
 }
 .buscador-paginacion-boton:disabled{
-  background-color: rgb(226, 0, 0);
   opacity: 0.2;
   text-decoration: none;
 }
@@ -237,5 +237,12 @@
   }
   .buscador-card-body{
     opacity: 1;
+  }
+  .buscador-paginacion{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .buscador-paginacion-boton{
+    width: auto;
   }
 }
