@@ -129,7 +129,7 @@ function Buscador() {
                   <div className='buscador-paginacion'>
                     <button className='buscador-paginacion-boton' onClick={prevPage} disabled={page === 0}>Previous Page</button>
                     <p className='m-0 mx-3'>{page + 1} de {totalPages}</p>
-                    <button className='buscador-paginacion-boton' onClick={nextPage} disabled={page === totalPages - 1}>Nect Page</button>
+                    <button className='buscador-paginacion-boton' onClick={nextPage} disabled={page === totalPages - 1}>Next Page</button>
                   </div>
                   <label htmlFor="paginas" className='fw-bold text-white'>Show:</label>
                   <select name="paginas" id="paginas" value={limit} onChange={handleLimit} className='buscador-paginacion-limite'>
