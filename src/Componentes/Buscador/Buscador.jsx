@@ -105,33 +105,33 @@ function Buscador() {
           <button className='buscador-boton' disabled={criterio.length===0 || loading} type='submit'>Buscar</button>
         </form>
       </div>
-          <div className='card-contenedor'>
-            {loading ? 
-              (
-                <Loading/>
-              ) 
-              : 
-              (
-                criterio.length > 0 && error && comics.length === 0? (
-                  <div className='text-center'>
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/47f55915057131.5628c778bf082.png" alt="Error" className='w-50' />
-                    <p className='text-white fw-bold'>No se encontraron resultados</p>
-                  </div>
-                ) : (
-                  <div>
-                    <div className='buscador-card-contenedor' >       
-                      {comics.map(comic => (
-                        <BuscadorCard id={comic.id} key={comic.id} thumbnail={comic.thumbnail} title={comic.title} name={comic.name} tipo={tipo}/>
-                      ))}
-                    </div>
-                    {comics.length > 0 && (
+        <div className='card-contenedor'>
+          {loading ? 
+            (
+              <Loading/>
+            ) 
+            : 
+            (
+            criterio.length > 0 && error && comics.length === 0? (
+              <div className='text-center'>
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/47f55915057131.5628c778bf082.png" alt="Error" className='w-50' />
+                <p className='text-white fw-bold'>No se encontraron resultados</p>
+              </div>
+            ) : (
+              <div>
+                <div className='buscador-card-contenedor' >       
+                  {comics.map(comic => (
+                    <BuscadorCard id={comic.id} key={comic.id} thumbnail={comic.thumbnail} title={comic.title} name={comic.name} tipo={tipo}/>
+                  ))}
+                </div>
+                {comics.length > 0 && (
                 <div className='text-center my-3'>
                   <div className='buscador-paginacion'>
-                    <button className='buscador-paginacion-boton' onClick={prevPage} disabled={page === 0}>Página Anterior</button>
+                    <button className='buscador-paginacion-boton' onClick={prevPage} disabled={page === 0}>Previous Page</button>
                     <p className='m-0 mx-3'>{page + 1} de {totalPages}</p>
-                    <button className='buscador-paginacion-boton' onClick={nextPage} disabled={page === totalPages - 1}>Página Siguiente</button>
+                    <button className='buscador-paginacion-boton' onClick={nextPage} disabled={page === totalPages - 1}>Nect Page</button>
                   </div>
-                  <label htmlFor="paginas" className='fw-bold text-white'>Mostrar:</label>
+                  <label htmlFor="paginas" className='fw-bold text-white'>Show:</label>
                   <select name="paginas" id="paginas" value={limit} onChange={handleLimit} className='buscador-paginacion-limite'>
                     <option value={3}>3</option>
                     <option value={9}>9</option>

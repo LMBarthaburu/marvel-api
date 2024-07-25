@@ -9,6 +9,7 @@
   height: 300px;
   border-radius: 10px;
   overflow: hidden;
+  object-fit: cover;
 }
 .detalle-card:hover .detalle-card-body{
   opacity: 1;

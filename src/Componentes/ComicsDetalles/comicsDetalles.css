@@ -1,6 +1,6 @@
 .detalles-card-contenedor{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 .comic-detalle-img{
@@ -13,7 +13,6 @@
 
 @media (min-width:573px) and (max-width:1024px){
   .detalles-card-contenedor{
-    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
   .comic-detalle-img{
