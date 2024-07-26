@@ -2,11 +2,13 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './buscador.css'
+import 'animate.css'
 import BuscadorCard from '../BuscadorCard/BuscadorCard';
 import Loading from '../Loading/Loading';
 import characterImg from '../../Recursos/Img/Characters.webp'
 import comicsImg from '../../Recursos/Img/Comics.webp'
 import eventsImg from '../../Recursos/Img/Events.png'
+import NoResults from '../../Recursos/Img/Sin-resultados.png'
 
 
 function Buscador() {
@@ -102,7 +104,7 @@ function Buscador() {
         </div>
         <form className='buscador' id='buscador' onSubmit={(e) => {e.preventDefault(); setLoading(true); getdata(0)}}>
           <input className='buscador-input' type="text" placeholder='Name or title' onChange={handleChange} value={name} required/>
-          <button className='buscador-boton' disabled={criterio.length===0 || loading} type='submit'>Buscar</button>
+          <button className='buscador-boton' disabled={criterio.length===0 || loading} type='submit'>Search</button>
         </form>
       </div>
         <div className='card-contenedor'>
@@ -113,9 +115,9 @@ function Buscador() {
             : 
             (
             criterio.length > 0 && error && comics.length === 0? (
-              <div className='text-center'>
-                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/47f55915057131.5628c778bf082.png" alt="Error" className='w-50' />
-                <p className='text-white fw-bold'>No se encontraron resultados</p>
+              <div className='text-center buscador-error-contenedor animate__animated animate__fadeIn'>
+                <p className='text-white fw-bold m-0'>No results available</p>
+                <img src={NoResults} alt="Error" className='buscador-error-img' />
               </div>
             ) : (
               <div>
